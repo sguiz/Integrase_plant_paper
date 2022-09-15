@@ -15,13 +15,13 @@ from itertools import cycle, islice
 #DEFINE FIRST the directory where your files are and where your want to generate your graphs.#
 #Those need to be characters"
 ##############################################################################################
-path_to_tuning_data_file=" "
-sheet_tuning=" "
-path_to_normalized_tuning_data_file=" "
-sheet_normalized_tuning=" "
-path_to_T2_data_file=" "
-sheet_T2_data=" "
-path_for_plot= " "
+path_to_tuning_data_file=r'ADD HERE'
+sheet_tuning='ADD HERE'
+path_to_normalized_tuning_data_file=r'ADD HERE'
+sheet_normalized_tuning='ADD here'
+path_to_T2_data_file='ADD HERE'
+sheet_T2_data='ADD HERE'
+path_for_plot='ADD HERE'
 ##############################################################################################
 ##############################################################################################
 
@@ -74,9 +74,9 @@ def plot_data(plot_info, constructs_to_plot, ylim, filename):
     ax.figure.savefig(filename, bbox_inches='tight')
 
 # read in seedling classification data from excel sheet
-tuning_data = pd.read_excel(r'path to tuning data file', sheet_name=sheet_tuning, usecols="B:H")
-tuning_data_norm = pd.read_excel(r'path to normalized tuning data file', sheet_name=sheet_normalized_tuning, usecols="B:H")
-LR_data_norm = pd.read_excel(r'path to T2 data file', sheet_name=sheet_T2_data, usecols="B:F")
+tuning_data = pd.read_excel(path_to_tuning_data_file, sheet_name=sheet_tuning, usecols="B:H")
+tuning_data_norm = pd.read_excel(path_to_normalized_tuning_data_file, sheet_name=sheet_normalized_tuning, usecols="B:H")
+LR_data_norm = pd.read_excel(path_to_T2_data_file, sheet_name=sheet_T2_data, usecols="B:F")
 
 # read out all data from df into a big list of lists for easier statistical analysis
 arrays_main = tuning_data.values.tolist()
