@@ -9,6 +9,16 @@ import seaborn as sns
 
 plt.rcParams.update({'font.size':20})
 
+##############################################################################################
+##############################################################################################
+#DEFINE FIRST the directory where your files are and where your want to generate your graphs.#
+#Those need to be characters"
+##############################################################################################
+path_platereader_data=r'ADD HERE'
+path_layout_file=r'ADD HERE'
+path_output='ADD HERE'
+##############################################################################################
+##############################################################################################
 
 # takes in list of raw platereader output dfs and takes the median yfp, rfp intensities
 # per well and creates merged lists of all intensity valuesthrough all the experiments. 
@@ -77,7 +87,7 @@ def plot_data(dataset, figuresize, construct_order, filename):
 
 # read in all raw platereader fluorescence measurement data (example in github repo)
 # replace with the path to your data, copy the line as many times as data files you have 
-data1 = pd.read_excel(r'path to your platereader data', usecols="B:CS")
+data1 = pd.read_excel(path_platereader_data, usecols="B:CS")
 
 
 # combine all platereader data outputs as one list
@@ -88,7 +98,7 @@ raw_data_list = []
 # read in all 96 well plate data layout files
 # replace with your data layout file (example in github repo)
 # copy line for as many data files you have
-data_layout1 = pd.read_csv(r'path to data layout file')
+data_layout1 = pd.read_csv(path_layout_file)
 
 # combine all layouts into one list
 # fill in list with your layout dataframes
@@ -142,14 +152,14 @@ ub_tuning = med_intensity_data[med_intensity_data.Construct.isin(['P23', 'P27', 
 
 # plot and save main tuning data
 plot_data(main_tuning, 30, ['P1', 'P2', 'P4', 'P5', 'P16', 'P17', 'P18', 'P19', 'P22', 'P23', 'P24', 'P25', '294arf'],
-"path where you want to save plot")
+path_output)
 
 # plot and save terminator tuning data
 plot_data(term_tuning, 10, ['P1', 'P2', 'P46', 'P47', '294arf'],
-"path where you want to save plot")
+path_output)
 
 # plot and save ub tuning data
 plot_data(ub_tuning, 8, ['P23', 'P27', 'P56', '294arf'],
-"path where you want to save plot")
+path_output)
 
 # %%
