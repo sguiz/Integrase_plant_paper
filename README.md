@@ -5,12 +5,12 @@
 This script allows you to create stacked bar plots showing the switching categories (either for tuning or lateral root switching data). It also computes statistical significance for the tuning dataset using analysis of variance (ANOVA) with a post hoc Tukey’s test.
 
 ### Package dependencies
-Pandas
-Matplotlib
-Scipy.stats
-Scikit_posthocs
-Statsmodels
-Itertools
+Pandas//
+Matplotlib//
+Scipy.stats//
+Scikit_posthocs//
+Statsmodels//
+Itertools//
 
 Data file included as a reference for data formatting
 
