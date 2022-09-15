@@ -1,0 +1,16 @@
+Stack.setChannel(1); //Select first channel
+run("Blue"); //Change channel color
+setMinAndMax(200, 4000); //Set brightness and contrast
+
+Stack.setChannel(2); //Select second channel
+run("Red"); //Change channel color
+setMinAndMax(200, 3000); //Set brightness and contrast
+
+Stack.setDisplayMode("composite"); //Overlay channels to create a composite image
+Stack.setActiveChannels("110"); //Remove channel 3 to isolate fluorescent channels
+run("Flatten"); //Flatten image to ensure proper rotation
+run("Rotate 90 Degrees Right");
+run("Rotate 90 Degrees Right"); //Rotate 180 degrees total
+run("Set Scale...", "distance=5.7273 known=1 pixel=1.000 unit=micron"); //Set scale of images
+run("Scale Bar...", "width=50 height=20 font=60 color=White background=None location=[Lower Right] bold overlay"); //Create a scale bar
+run("Flatten"); //Flatten for final image
