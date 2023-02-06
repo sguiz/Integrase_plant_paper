@@ -1,4 +1,4 @@
-# Codes to process data for Guiziou et al., 2022: An integrase toolbox to record gene-expression during plant development.
+# Codes to process data for Guiziou et al., 2023: An integrase toolbox to record gene-expression during plant development.
 
 ## Seedling plotting scrit
 
